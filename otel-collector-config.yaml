@@ -7,7 +7,6 @@ exporters:
       x-axiom-dataset: macrograph
 
 service:
-  extensions: [pprof, zpages, health_check]
   pipelines:
     traces:
       receivers:
@@ -17,10 +16,3 @@ service:
         - batch
       exporters:
         - otlphttp
-
-extensions:
-  health_check:
-  pprof:
-    endpoint: :1888
-  zpages:
-    endpoint: :55679
